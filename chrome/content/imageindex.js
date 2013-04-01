@@ -28,14 +28,29 @@ var ImageIndex = {
                 }
             } else {
                 var images = doc.evaluate('//tr/td/img[@alt="[IMG]"]', doc, null, XPathResult.UNORDERED_NODE_SNAPSHOT_TYPE, null);
-                
-                for (var i = 0; i < images.snapshotLength; i++) {
-                    thisImage = images.snapshotItem(i);
+                if (images.snapshotLength > 0) {
+					for (var i = 0; i < images.snapshotLength; i++) {
+						thisImage = images.snapshotItem(i);
                     
-                    thisImage.src = thisImage.parentNode.nextSibling.firstChild.href;
-                    thisImage.style.maxWidth  = '100px';
-                    thisImage.style.maxHeight = '100px';
-                }
+						thisImage.src = thisImage.parentNode.nextSibling.firstChild.href;
+						thisImage.style.maxWidth  = '100px';
+						thisImage.style.maxHeight = '100px';
+					}
+				} else {
+					var images = doc.evaluate('//img[@alt="[IMG]"]', doc, null, XPathResult.UNORDERED_NODE_SNAPSHOT_TYPE, null);
+					if (images.snapshotLength > 0) {
+						for (var i = 0; i < images.snapshotLength; i++) {
+							thisImage = images.snapshotItem(i);
+							relatedAnchor = thisImage.nextSibling;
+							if (relatedAnchor.nodeType != 1) {
+								relatedAnchor = relatedAnchor.nextSibling;
+							}
+							thisImage.src = relatedAnchor.href;
+							thisImage.style.maxWidth  = '100px';
+							thisImage.style.maxHeight = '100px';
+						}
+					}
+				}
             }
         }
     }
