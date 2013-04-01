@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<overlay id="imageindex" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+    <!-- This imports our javascript. -->
+    <script type="application/x-javascript" src="chrome://imageindex/content/imageindex.js">
+    </script>
+</overlay>

@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<RDF:RDF xmlns:em="http://www.mozilla.org/2004/em-rdf#"
+         xmlns:NC="http://home.netscape.com/NC-rdf#"
+         xmlns:RDF="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+  <RDF:Description RDF:about="rdf:#$r8maK3"
+                   em:id="{ec8030f7-c20a-464f-9b0e-13a3a9e97384}"
+                   em:minVersion="3.0"
+                   em:maxVersion="3.5.*" />
+  <RDF:Description RDF:about="urn:mozilla:install-manifest"
+                   em:id="{e7192143-679d-4a23-8d58-830870f2fbf5}"
+                   em:name="Image Index"
+                   em:version="0.5"
+                   em:creator="Zachary Fox"
+                   em:description="Shows images on apache directory index pages instead of the default image icon"
+                   em:homepageURL="http://www.zacharyfox.com">
+    <em:targetApplication RDF:resource="rdf:#$r8maK3"/>
+  </RDF:Description>
+</RDF:RDF>
